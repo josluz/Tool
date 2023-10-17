@@ -1,0 +1,145 @@
+body {
+    background: url("/static/media/town.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    font-family: 'Nunito Sans', sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;/
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+.login-container {
+
+    position: fixed;
+
+
+
+    width: 900px;
+    height: 500px;
+
+    background: linear-gradient(rgb(0, 0, 0), rgb(60, 60, 60));
+    box-shadow: 5px 5px 60px 15px rgb(247, 247, 247);
+
+
+    border: 1px solid rgb(73, 73, 73);
+    border-radius: 15px;
+
+    transform: translate(-50%, -50%);
+
+    top: 50%;
+    left: 50%;
+}
+
+.login-container h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+
+    text-align: center;
+    margin-top: 1.7rem;
+}
+
+.login-container-inputs {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem 3rem;
+    position: absolute;
+
+    transform: translate(-50%, -50%);
+
+    left: 50%;
+    top: 50%;
+
+}
+
+.text-field {
+    display: flex;
+    align-items: center;
+
+    box-sizing: border-box;
+
+    box-shadow: 2px 2px 30px 7px rgb(136, 136, 136);
+
+    border: 1px solid white;
+    width: 330px;
+    height: 45px;
+
+    padding: 15px 10px;
+
+    border-radius: 10px;
+}
+
+.text-field::placeholder {
+    color: rgb(0, 0, 0);
+}
+
+.text-field:focus {
+    outline: 2px solid white;
+    box-shadow: 2px 2px 40px 10px white;
+}
+
+.submit-button {
+    position: absolute;
+
+    grid-column: span 2;
+
+    left: 50%;
+    top: 70%;
+
+    transform: translate(-50%, -50%);
+}
+
+.login-container-inputs button {
+    width: 330px;
+    height: 45px;
+
+    border-radius: 10px;
+
+    font-size: 1.2rem;
+
+    background-color: rgba(255, 255, 255, 0);
+    border: 2px solid rgb(255, 255, 255);
+
+    color: white;
+}
+
+.error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-message {
+    color: red;
+    font-size: 16px;
+    text-align: center;
+    top: 88%;
+    position: absolute;
+}
+
+.login-container-inputs button:hover {
+    background-color: rgb(86, 86, 86);
+    cursor: pointer;
+}
+
+.login-container-inputs button:active {
+    background-color: black;
+    border: 2px solid white;
+    color: white;
+    cursor: pointer;
+}

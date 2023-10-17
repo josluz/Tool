@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Nunito Sans' rel='stylesheet'>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
+
+    <title>Register</title>
+</head>
+
+<body>
+    <div class="login-container">
+
+        <h1>Create your Account</h1>
+        <form action="{% url 'register_view' %}" method="post">
+            {% csrf_token %}
+            <div class="login-container-inputs">
+                <input type="username" name="username" id="username" placeholder="Username:" class="text-field"
+                    required>
+                <input type="email" name="email" id="email" placeholder="Email:" class="text-field" required>
+                <input type="password" name="password" id="password" placeholder="Password:" class="text-field"
+                    required>
+                <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password:"
+                    class="text-field" required>
+
+
+                <button type="submit" name="submit" id="submit">Sign Up</button>
+
+            </div>
+        </form>
+        {% if error %}
+        <div class="error-container">
+            <p class="error-message">{{ error }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>
